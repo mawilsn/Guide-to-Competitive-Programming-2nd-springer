@@ -12,5 +12,9 @@
 # g++ -std=c++11 -O2 -Wall read_line.cpp -o read_line
 # ./read_line
 
-g++ -std=c++11 -O2 -Wall freopen_example.cpp -o freopen_example
-./freopen_example
+# g++ -std=c++11 -O2 -Wall freopen_example.cpp -o freopen_example
+# ./freopen_example
+
+# g++ -std=c++11 -O2 -Wall int_long_bug.cpp -o int_long_bug && ./int_long_bug
+
+g++ -std=c++11 -O2 -Wall generate_subset.cpp -o generate_subset && ./generate_subset
