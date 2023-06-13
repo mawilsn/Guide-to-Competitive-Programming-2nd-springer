@@ -17,4 +17,6 @@
 
 # g++ -std=c++11 -O2 -Wall int_long_bug.cpp -o int_long_bug && ./int_long_bug
 
-g++ -std=c++11 -O2 -Wall generate_subset.cpp -o generate_subset && ./generate_subset
+# g++ -std=c++11 -O2 -Wall generate_subset.cpp -o generate_subset && ./generate_subset
+
+g++ -std=c++11 -O2 -Wall permutations.cpp -o permutations && ./permutations

@@ -393,9 +393,64 @@ generating permutations:
 
 1,2,3 permutations will be 1,2,3; 1,3,2; 2,1,3; 2,3,1; 3,1,2; 3,2,1
 </td><td width="80%">
-note
+void search( vector<int>& permutation, vector<bool>& chosen){
+    int n = chosen.size();
+
+    if (permutation.size() == n){
+        for(int i = 0; i < n; i++){
+            cout << permutation[i];
+        }
+       
+    } else{
+        for(int i = 1; i <= n; i++){
+            if (chosen[i]) continue;
+            chosen[i] = true;
+            permutation.push_back(i);
+            search(permutation, chosen);
+            chosen[i] = false;
+            permutation.pop_back();
+        }
+    }
+}
 </td>
 
+</table>
+
+---
+
+## 2.2.3 Backtracking
+<table>
+<tr></tr><td style="text-align: left" width="20%">
+backtracking
+</td><td width="80%">
+begins with an empty solution and extends the solution step by step. Recursivly finds all the different ways how a solution can be constructed
+</td>
+
+
+<tr></tr><td style="text-align: left" width="20%">
+calculating the queens
+</td><td width="80%">
+Problem: imagine how many queens can be put on a chessboard where no two queens attack each other.
+
+There are only 4 queens on a 4X4 chess board
+
+|||||
+|---|---|--|--|
+| |q|||
+||||q|
+
+
+</td>
+</table>
+
+---
+## 2.3 bit manipulation
+<table>
+<tr></tr><td style="text-align: left" width="20%">
+cue
+</td><td width="80%">
+note
+</td>
 </table>
 
 ---
