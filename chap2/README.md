@@ -447,10 +447,96 @@ There are only 4 queens on a 4X4 chess board
 ## 2.3 bit manipulation
 <table>
 <tr></tr><td style="text-align: left" width="20%">
+bit representation
+</td><td width="80%">
+is read left to right
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+how to convert bit representation to a formula?
+</td><td width="80%">
+
+$b_{k}2^k + \cdots + b_{2}2^2  + b_{1}2^1 +  b_{0}2^0$
+
+or
+
+$\Sigma b_{k}2^k$
+
+101011 = 43
+
+
+$1*2^5+0*2^4+1*2^3+1*2^2+1*2^1+1*2^0=43$
+</td>
+
+## 2.3.1 Bit Operations
+<tr></tr><td style="text-align: left" width="20%">
+AND (&)
+</td><td width="80%">
+
+`x&y` produce a number that has on in the bits where x and y have bits.
+
+```
+10110 \n
+11010&
+-----
+10010
+```
+Notice how the 1 is only where one was for both data sets.
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+OR |
+</td><td width="80%">
+creates a bit as long as there is at least one bit
+
+22|26=30
+```
+10110| 
+11010
+-----
+11110
+```
+
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+XOR ^
+</td><td width="80%">
+Produces a bit where there is exatly one buit
+
+22^26=12
+```
+10110| 
+11010
+-----
+01100
+```
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+NOT operation ~
+</td><td width="80%">
+~x all bits are in verted
+
+~x=-x-1
+
+~29=-30
+
+~00000000000000000000000000011101=11111111111111111111111111100010
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
 cue
 </td><td width="80%">
 note
 </td>
+
+<tr></tr><td style="text-align: left" width="20%">
+cue
+</td><td width="80%">
+note
+</td>
+
 </table>
 
 ---
