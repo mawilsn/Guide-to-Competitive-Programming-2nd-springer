@@ -526,15 +526,99 @@ NOT operation ~
 </td>
 
 <tr></tr><td style="text-align: left" width="20%">
-cue
+Left Bit shift
 </td><td width="80%">
-note
+
+`x<<k` appends `k` 0 bits  on `x`
+
+```c++
+1110 << 2 = 111000 // 14 << 2 = 56
+
+```
+
+
 </td>
 
 <tr></tr><td style="text-align: left" width="20%">
-cue
+Right Bit Shift
 </td><td width="80%">
-note
+
+`x >> k` removes `k` bits on `x`   
+
+```c++
+110001 >> 3 = 110 // 49 >> 3 = 6
+
+```
+
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+common functions
+</td><td width="80%">
+
+```
+int x = 5328; // 00000000 00000000 00010100 11010000
+cout << __builtin_clz(x) << "\n"; // 19  counts 0s at the begining
+cout << __builtin_ctz(x) << "\n"; // 4 number 0s at the end
+cout << __builtin_popcount(x) << "\n"; // 5 number of 1s in the bit representation
+cout << __builtin_parity(x) << "\n"; // 1 the parity of the number of ones in the bit representation
+```
+</td>
+
+## 2.3.2 Representing sets
+<tr></tr><td style="text-align: left" width="20%">
+Representing a set in a bit representation
+</td><td width="80%">
+
+{0,1,2,3,...,n-1} can represent a bit integer
+
+example: 32 bit integer can be represented in a set of 0-31
+
+{0,1,2,3, ... (32-1)}
+
+</td>
+
+<tr></tr><td style="text-align: left" width="20%">
+Represent {1,3,4,8}
+</td><td width="80%">
+
+Remember the formula for bit representation: $\Sigma b_{k}2^k$
+
+$1*2^8+1*2^4+1*2^3+1*2^1=282$ // 00...10001101
+
+```c++
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main(){
+    int x = 0; // 0000000000000000000000...
+    x |= (1<<1); // 000....0010 or 2
+    x |= (1<<3); // 0000...1010 or 10
+    x |= (1<<4); //000...11010 or 26
+    x |= (1<<8); //000...100011010 or 282
+
+
+    cout << x <<"\n";
+    cout << __builtin_popcount(x) << "\n";
+
+}
+```
+The progran above uses or and then assigns
+
+Lets walk through it.
+
+1. assign x = 0, we have a 32 bit number that is 0 or 00000000 00000000 000000000 00000000
+2. bitshift to the left 1 once or 000...10 which equals 2
+   1.  do an or for 0 | 2 = 2 or 000...10
+3.  bit shift 1 left 3 or 00...1000 and or that with previous 2 
+    1.  2|8 = 10 or 00000...00010|00000...01000 = 000...01010
+4.  bit shift 1 left 4 or 00...10000 and or that with previous 10
+    1.  10|16 = 36 or 00000...1010|00000...010000 = 000...011010
+5.  bit shift 1 left 8 or 00...100000000 and or that with previous 26
+    1.  256|36 = 282 or 00000...011010|00000...0100000000 = 000...0100011010
+
 </td>
 
 </table>
