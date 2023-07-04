@@ -118,3 +118,71 @@ My opinion is the book is expecting us to know some more information and this se
 
 Other definitions:
 
+Two other common notations: the $\Omega$ gives the lower bound.  the other is $\Theta$ gives the upper bound
+
+
+## 3.2 Algorithm Design Examples
+
+Presents two algos. design examples where a problem can be solved in different ways: Brute force and then more effiecient.
+
+### 3.2.1 Maximum Subarray Sum
+
+array `[-1,2,4,-3,5,2,-5,2]`
+
+Probem: find the largets sum of numbers in the array.
+
+
+$O(n^3)$ solution: go through all possible combinations and calculate the sum.
+1. create set all
+2. sum
+
+```c++
+int best = 0;
+int array[8] = {-1,2,4,-3,5,2,-5,2};
+
+for (int a = 0; a < array.size(); a++){
+  for (int b = a; b < array.size(); b++){
+    int sum = 0;
+    for (int k = a; k <= array.size(); k++){
+      sum += array[k]
+    }
+    best = max(best, sum);
+  }
+}
+cout << best << "\n";
+
+```
+Let do $O(n^2)$ solution
+
+```c++
+int best = 0;
+int array[8] = {-1,2,4,-3,5,2,-5,2};
+
+for (int a = 0; a < array.size(); a++){
+  int sum = 0;
+  for (int b = a; b < array.size(); b++){
+    sum += array[b];
+    best = max(best, sum);
+  }
+}
+cout << best << "\n";
+
+```
+
+$O(n)$ solution is even faster 
+
+```c++
+int best = 0, sum=0;
+int array[8] = {-1,2,4,-3,5,2,-5,2};
+for(int k = 0; k<n; k++){
+  sum = max(array[k], sum+array[k]);
+  best = max(best, sum);
+}
+cout << best << "\n";
+
+```
+
+
+
+
+
