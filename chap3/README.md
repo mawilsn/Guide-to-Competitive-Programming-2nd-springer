@@ -184,11 +184,22 @@ cout << best << "\n";
 
 ### 3.2.2 Two Queens Problem
 
-Number of ways to put two queens on a chessboard of n x n size without attacking eacher other
+Number of ways to put two queens on a chessboard of n x n size without attacking eacher other.
+
+There is no code for this section. It only goes on to describe potential algos.
+
+$O(n^4)$ 
+
+<table><tbody>
+<tr><td>Time complexity</td><td>solution</td></tr>
+<tr><td> $O(n^4)$  </td>><td> Go through all possible ways to place two queens on the board and count the combinations where the queens don't attack each other. This is $O(n^4)$ because there are $n^2$ ways to choose the posistion for the first queen and $n^2-1$ ways to put the second queen. </td></tr> 
+<tr><td> $O(n^2)$  </td>><td> We can calculate the number of squares a single queen can attack (n-1 diagnolly, d-1 vertically and d-1 horizontally). Knowing this we can calculate thin O(1) time where the second queen can be placed </td></tr> 
+<tr><td> $O(1)$  </td>><td> Recursive solution. If we know the value of q(n), how can we use it to calculate the value of q(n+1)? The book goes more in depth on it. It's a little to general for me.</td></tr>
+
+</tbody></table>
 
 
 
+## 3.3 Code Optimization
 
-
-
-
+I'm going to skip the rest of this. I think this is important, but I want to keep moving on and I don't think this in my notes is what I'm trying to achieve.
