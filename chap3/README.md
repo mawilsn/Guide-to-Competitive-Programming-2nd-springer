@@ -182,6 +182,12 @@ cout << best << "\n";
 
 ```
 
+### 3.2.2 Two Queens Problem
+
+Number of ways to put two queens on a chessboard of n x n size without attacking eacher other
+
+
+
 
 
 
