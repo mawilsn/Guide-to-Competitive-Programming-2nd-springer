@@ -32,3 +32,12 @@ for (int i=0;i<n;i++){
 ```
 
 - This is an $O(n^2)$ time complexity
+
+**Inversion** - I don't 100% understand this concept. Ok, uhm, lets see: a pair of of indices *(a,b)* such that *a<b* and arry[a] > array[b] "The elements are in the wrong order." look at the index and array below. the example has 3 inversions at the index (3,4), (3,5) and (6,7)
+
+index:            [0][1][2][3][4][5][6][7] \
+array:            [1][2][2][6][3][5][9][8]
+
+The number of inversions indicate how much work needs to be done
+
+### 4.1.2 Merge Sort
