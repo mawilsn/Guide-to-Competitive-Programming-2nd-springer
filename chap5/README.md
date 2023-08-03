@@ -128,3 +128,43 @@ C++ offers two specialized data structures based off of *deque*.
 
 *queue* elements are inserted at the end of the strucutre and removed from the front of the structure. *front* and *back* are provided for accessing the first and last elements respectively.
 
+```c++
+    queue<int> q;
+    q.push(2); // [2]
+    q.push(5); // [2, 5]
+    cout << q.front() << "\n"; // 2
+    q.pop(); // [5]
+    cout << q.back() << "\n"; // 5
+```
+
+## 5.2 Set Structures
+
+*set* - data structure that maintains a colklections ofelements. Basic operations are insertions, search and removal.
+
+C++ has 2 set structures
+
+- `set` is based on a balanced binary search treee and its operations work in O(logn) time
+- `unordered_set`  is based on a has table and its operations work on averate O(1)
+
+---
+- `insert` adds an element to the set
+- `count` returns the number of occurreneces of an element in the set
+- `erase` removes an element from the set
+  
+
+  ```c++
+      set<int> s;
+    s.insert(3); // [3]
+    s.insert(2); // [3,2]
+    s.insert(5); // [3,2,5]
+    cout << s.count(3) << "\n"; // there is one three
+    cout << s.count(4) << "\n"; // there are no fours
+    s.erase(3);
+    s.insert(4);
+    cout << s.count(3) << "\n"; // there is one three
+    cout << s.count(4) << "\n"; // there are no fours
+  ```
+
+A gotcha is the count: Sets only have distinct values and that means the .count will return only a 0 or 1 for a set
+
+
