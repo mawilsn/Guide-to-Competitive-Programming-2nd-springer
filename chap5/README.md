@@ -165,6 +165,38 @@ C++ has 2 set structures
     cout << s.count(4) << "\n"; // there are no fours
   ```
 
-A gotcha is the count: Sets only have distinct values and that means the .count will return only a 0 or 1 for a set
+WARNING - A gotcha is the count: Sets only have distinct values and that means the .count will return only a 0 or 1 for a set
+
+- `set` can be used like a vecotr but it is not possible to access elementes using the [] notation. You can use a for loop to go through it by iterating through it.
+
+```c++
+for (auto x : s){
+        cout << x << "\n";
+    }
+```
 
 
+
+**Ordered Sets** is the biggest difference between sets and unordered_sets. It would be more efficient to find the largest and smallest ints in 
+a ordered set as opposesed to an unordered set.
+
+```c++
+auto first = s.begin();
+    auto last = s.end(); last--;
+    cout << "smallest and largest ";
+    cout << *first << " " << *last <<"\n";
+```
+s.end() points to the element after the last one
+
+
+**multisets** - can have several copies of the same value.  C++ will have `multiset` and `unordered_multiset`. This resemebles set and unordered_set
+
+```c++
+ multiset<int> ms;
+    ms.insert(5);
+    ms.insert(5);
+    ms.insert(5);
+    cout << "how may 5s? "<< ms.count(5)<<"\n";
+```
+
+### 5.2.2 Maps
