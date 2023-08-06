@@ -200,3 +200,76 @@ s.end() points to the element after the last one
 ```
 
 ### 5.2.2 Maps
+
+`maps` consists of a key-value pairs. map can also be seen as a generalized array.
+
+```c++
+map<string, int> m;
+m["monkey"] = 4;
+m["banana"] = 3;
+m["harpsichord"] = 9;
+
+cout << m["banana"] << "/n";  // prints out 3
+```
+
+.first will print out the key and the .second will print out the value in the for loop below
+
+```c++
+for (auto x: m){
+        cout << x.first << " "<< x.second << "\n";
+    }
+```
+
+### 5.2.3 Priority Queues
+
+`priority_queue`- multiset that supports element inserttion. This is a sorted data struct. Good idea to use this instead of set or multiset.
+
+```c++
+ priority_queue<int> q;
+q.push(3);
+q.push(5);
+q.push(7);
+q.push(2);
+
+cout << q.top() << "\n"; // 7
+q.pop();
+cout << q.top() << "\n"; // 5
+// q.pop();
+q.push(6);
+cout << q.top() << "\n"; //6
+```
+
+### 5.2.4 Policy Based Sets
+
+g++ compiler also privoides some data strucutcures that are not part of the C++ standard library. These are called *policy-based structures*.
+
+To use these  data structures the line below must be added:
+```c++
+#include <bits/stdc++.h>
+using namespace __gnu_pbds;
+```
+
+W can then define the data structure indexed_set that is like set but can be indexed like an array.
+
+```c++ 
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> indexed_set;
+
+int main(){
+
+    indexed_set s;
+    s.insert(2);
+    s.insert(3);
+    s.insert(7);
+    s.insert(9);
+    auto x = s.find_by_order(2);
+    cout << *x << "\n"; // 7
+    
+    auto k = s.order_of_key(7);
+    cout << k << "\n"; // 2
+
+}
+```
+
+
+
+
