@@ -25,8 +25,9 @@ int minCoins(int coins[], int m, int V)
 		}
 	}
 
-	if (table[V] == INT_MAX)
+	if (table[V] == INT_MAX){
         return -1;
+		}
 
 
 
@@ -36,9 +37,9 @@ return table[V];
 // Driver program to test above function
 int main()
 {
-	int coins[] = {2,5 }; ;
+	int coins[] = {1,2,5 }; ;
 	int m = sizeof(coins)/sizeof(coins[0]);
-	int V = ;
+	int V = 11;
 	cout << "Minimum coins required is "
 		<< minCoins(coins, m, V) << "\n";
 	return 0;
